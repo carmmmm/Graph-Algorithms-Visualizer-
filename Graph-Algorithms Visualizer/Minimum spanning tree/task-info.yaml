@@ -1,0 +1,41 @@
+type: edu
+files:
+  - name: src/visualizer/ApplicationRunner.java
+    visible: true
+    learner_created: false
+  - name: src/visualizer/MainFrame.java
+    visible: true
+    learner_created: false
+  - name: test/_1_InitialTests.java
+    visible: false
+    learner_created: false
+  - name: test/_2_VertexTests.java
+    visible: false
+    learner_created: false
+  - name: test/_3_EdgesTests.java
+    visible: false
+    learner_created: false
+  - name: test/_4_RemoveVertexEdgeTests.java
+    visible: false
+    learner_created: false
+  - name: test/_5_GraphAlgorithmTests.java
+    visible: false
+    learner_created: false
+  - name: test/Edge.java
+    visible: false
+    learner_created: false
+  - name: test/GraphDataOne.java
+    visible: false
+    learner_created: false
+  - name: test/GraphDataTwo.java
+    visible: false
+    learner_created: false
+  - name: test/TestingUtils.java
+    visible: false
+    learner_created: false
+  - name: test/Vertex.java
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/projects/207/stages/1038/implement#comment
+status: Unchecked
+record: -1

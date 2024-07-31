@@ -1,0 +1,23 @@
+type: edu
+files:
+  - name: src/visualizer/ApplicationRunner.java
+    visible: true
+    learner_created: false
+  - name: src/visualizer/MainFrame.java
+    visible: true
+    learner_created: false
+  - name: test/GraphData.java
+    visible: false
+    learner_created: false
+  - name: test/GraphDataOne.java
+    visible: false
+    learner_created: false
+  - name: test/GraphDataTwo.java
+    visible: false
+    learner_created: false
+  - name: test/GraphTraversalAlgorithmTests.java
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/projects/207/stages/1036/implement#comment
+status: Unchecked
+record: -1

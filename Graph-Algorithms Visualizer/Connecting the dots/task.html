@@ -1,0 +1,68 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Every graph contains edges that connect two vertices. Edges can be of different types: <strong>directed</strong> and <strong>undirected</strong>. However, we will deal only with undirected edges in this project. Let's discuss them first.</p>
+<p>Directed edges<strong> </strong>originate from the source vertex and end in the destination vertex, so we can say that it has a direction. It is represented by an arrow (-&gt;) where the arrowhead defines its destination. To find more details, please, refer to the Objectives section.</p>
+<p>Undirected edges do not have a proper source and destination; each vertex can be considered as the source and destination.</p>
+<p><strong>Weighted edges</strong> are edges that have some cost. For example, toll roads require a fare while some roads are free. The ones that require a fare can be compared with weighted edges, and the free ones are the not-weighted edges.</p>
+<p>We want to give full control to our users, so our application should also have options — let users choose what they want to do, add vertices, edges, remove vertices or edges.</p>
+<p>In the <code class="java">Add an Edge</code> mode users can select a vertex when they click on a vertex. Now, if users again click on a different vertex, a dialog box will appear to input the edge weight. After valid input, it will create a new edge between the selected vertices. The first vertex will be the source, and the second vertex is the destination. The edge weight should also be displayed near the edge.</p>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, you need to do the following:</p>
+<ol>
+<li>Add a <code class="java">JMenuBar</code> with a <code class="java">JMenu</code> that contains the following options (<code class="java">JMenuItems</code>):
+
+	<ul>
+<li><code class="java">Add a Vertex</code></li>
+<li><code class="java">Add an Edge</code></li>
+<li><code class="java">None</code></li>
+</ul>
+</li>
+<li>Add a <code class="java">JLabel</code> to display the current mode. For example, if <code class="java">Add an Edge</code> is selected, the <code class="java">JLabel</code> would show <code class="java">Add an Edge</code>. The <code class="java">JLabel</code> option is set to <code class="java">Add a Vertex</code> by default. Whenever a new mode is selected, the <code class="java">JLabel</code> must be immediately set to display the new mode;</li>
+<li>Add a function to connect two vertices with a <code class="java">JComponent</code> edge. It should be a straight line. For convenience, add two edges (<code class="java">JComponent</code>) — one from the source (the first vertex) to the destination (the second vertex), and the other in the vice-versa direction;</li>
+<li>Every edge must have weight. While creating an edge, prompt a dialog box (<code class="java">JOptionPane</code>) for inputting an edge weight that contains an <code class="java">Ok</code> button, a <code class="java">Cancel</code> button, and a <code class="java">Text Box</code>;</li>
+<li>The weight of each edge must be displayed in <code class="java">JLabel</code> beside it. Weight is always a digit, update the dialog box every time the weight is input. Make sure that you do not repeat an edge label;</li>
+<li>Make sure that the vertices can be added only in the <code class="java">Add a Vertex</code> mode; the edges — only in the <code class="java">Add an Edge</code> mode. In other modes, vertex creating dialog box must not appear.</li>
+</ol>
+<p></p><div class="alert alert-primary">When creating an edge, adjust the JComponent's bounds so that it will exactly fit the created edge.</div>
+<p>Maintain the following hierarchy with the naming conventions:</p>
+<ul>
+<li>Graph <code class="java">JPanel</code> — <code class="java">Graph</code>
+<ul>
+<li>Vertex <code class="java">JPanel</code> — <code class="java">Vertex &lt;id&gt;</code>. For example, <code class="java">Vertex 1</code>, <code class="java">Vertex 2</code>, <code class="java">Vertex A</code>, and so on;
+
+		<ul>
+<li>Vertex label <code class="java">JLabel</code> — <code class="java">VertexLabel &lt;id&gt;</code>. For example,<strong> </strong><code class="java">VertexLabel 1</code>, <code class="java">VertexLabel 2</code>, <code class="java">VertexLabel A</code>, and so on;</li>
+</ul>
+</li>
+<li>Edge <code class="java">JComponent</code> — <code class="java">Edge &lt;&lt;vId1&gt; -&gt; &lt;vId2&gt;&gt;</code>. For example, <code class="java">Edge &lt;1 -&gt; 2&gt;</code>, <code class="java">Edge &lt;A -&gt; B&gt;</code>, and so on. <code class="java">Edge &lt;1 -&gt; 2&gt;</code> means the edge originates from <code class="java">Vertex 1</code> and ends at <code class="java">Vertex 2</code>;</li>
+<br/>
+<li>Edge weight <code class="java">JLabel</code> — <code class="java">EdgeLabel &lt;&lt;vId1&gt; -&gt; &lt;vId2&gt;&gt;</code>. For example, <code class="java">EdgeLabel &lt;1 -&gt; 2&gt;</code>, <code class="java">EdgeLabel &lt;A -&gt; B&gt;</code>, and so on. <code class="java">EdgeLabel &lt;1 -&gt; 2&gt;</code> means the weight of the edge originates from <code class="java">Vertex 1</code> and ends at <code class="java">Vertex 2</code>;</li>
+</ul>
+</li>
+<li><code class="java">JMenuBar</code> — <code class="java">MenuBar</code>;
+	<ul>
+<li>Mode <code class="java">JMenu</code> — <code class="java">Mode</code>;
+		<ul>
+<li><code class="java">JMenuItem</code> for adding a vertex — <code class="java">Add a Vertex</code><strong>;</strong></li>
+<li><code class="java">JMenuItem</code> for adding an edge — <code class="java">Add an Edge</code><strong>;</strong></li>
+<li><code class="java">JMenuItem</code> -&gt; <code class="java">None</code><strong>;</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code class="java">JLabel</code> for displaying the current option -&gt; <code class="java">Mode</code><strong>.</strong></li>
+</ul>
+<p>If you want, you may add colors for a selected vertex for a better user experience.</p>
+<p> </p>
+<p></p><div class="alert alert-primary">Don't implement the functionality for removing vertices and edges. We will embark upon this in the next stage.</div>
+<p> </p>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1: </strong><em>the modes menu can look like this</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Graph-Algorithms Visualizer: modes menu" height="448" name="img1.PNG" src="https://ucarecdn.com/8500cc9b-d412-4312-ad71-f4da3cb29f27/" width="600"/></picture></p>
+<p><strong>Example 2: </strong><em>adding a vertex remains the same</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Graph-Algorithms Visualizer: adding a vertex" height="451" name="img2.PNG" src="https://ucarecdn.com/58ea4e0f-881c-4a98-9567-4bf15a8d3a9c/" width="600"/></picture></p>
+<p><strong>Example 3: </strong><em>clicking on two vertices in the Add an Edge option; a new window pops up to prompt for the edge weight</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Graph-Algorithms Visualizer: clicking on two vertices in the Add an Edge option; a new window pops up to prompt for the edge weight" height="450" name="img3.PNG" src="https://ucarecdn.com/d9bdbec7-4a1a-48aa-9f37-f508ca5f5582/" width="600"/></picture></p>
+<p><strong>Example 4: </strong> <em>here is how an edge can look</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Graph-Algorithms Visualizer: edge" height="449" name="img4.PNG" src="https://ucarecdn.com/34ae5aec-4087-493f-ad72-6e0f484cb420/" width="600"/></picture></p>
+</div>

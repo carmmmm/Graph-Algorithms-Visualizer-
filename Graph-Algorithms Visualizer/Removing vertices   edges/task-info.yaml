@@ -1,0 +1,15 @@
+type: edu
+custom_name: Removing vertices & edges
+files:
+  - name: src/visualizer/ApplicationRunner.java
+    visible: true
+    learner_created: false
+  - name: src/visualizer/MainFrame.java
+    visible: true
+    learner_created: false
+  - name: test/RemovingVerticesAndEdgesTests.java
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/projects/207/stages/1035/implement#comment
+status: Unchecked
+record: -1

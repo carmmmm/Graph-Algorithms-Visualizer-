@@ -1,0 +1,20 @@
+type: edu
+files:
+  - name: src/visualizer/ApplicationRunner.java
+    visible: true
+    learner_created: false
+  - name: src/visualizer/MainFrame.java
+    visible: true
+    learner_created: false
+  - name: test/ClickToVertexTests.java
+    visible: false
+    learner_created: false
+  - name: src/visualizer/VertexPanel.java
+    visible: true
+    learner_created: true
+  - name: src/visualizer/GraphPanel.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/projects/207/stages/1033/implement#comment
+status: Unchecked
+record: -1

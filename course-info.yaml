@@ -1,0 +1,15 @@
+type: hyperskill
+title: Graph-Algorithms Visualizer
+language: English
+summary: "<div><div class=\"alert alert-primary\">You will practice concepts frequently\
+  \ tested in technical interviews at top tech companies.</div>\r\n<p>Visualization\
+  \ always draws attention. And it makes learning easier. What if we could visualize\
+  \ everything? In this project, you will build a Java GUI application with Swing\
+  \ to create graphs and visualize graph algorithms like traversals, spanning trees,\
+  \ and shortest pathfindings.</p></div><br/><br/>Learn more at <a href=\"https://hyperskill.org/projects/207?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card\"\
+  >https://hyperskill.org/projects/207</a>"
+programming_language: Java
+programming_language_version: 11
+content:
+  - Graph-Algorithms Visualizer
+mode: Study

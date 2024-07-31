@@ -1,0 +1,45 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>There is a problem that we faced in the previous stage. We could create vertices only by hardwiring them inside our code. We want our users to interact with our application. So, in this stage, the program will create vertices when users click on the screen.</p>
+<p>When users click on the graph, prompt a dialog box <code class="java">JOptionPane</code> that contains a <code class="java">TextBox</code>, an <code class="java">Ok</code> button, and a <code class="java">Cancel</code> button. Take a look at the <a href="https://www.tutorialspoint.com/swing/swing_joptionpane" rel="noopener noreferrer nofollow" target="_blank">tutorial</a> by TutorialsPoint to learn more about <code class="java">JOptionPane</code>.</p>
+<p>Below you can find the instructions for the three components of the dialog box:</p>
+<ul>
+<li><code class="java">TextBox</code><strong> </strong>is responsible to obtain a <code class="java">Vertex ID</code> from users;</li>
+<li><code class="java">Ok</code> button<strong> </strong>—<strong> </strong>clicking on the <code class="java">Ok</code> button closes the dialog box and creates a vertex with the <code class="java">Vertex ID</code> entered by users;</li>
+<li><code class="java">Cancel</code><strong> </strong>button closes the dialog box.</li>
+</ul>
+<p>Make sure that the <code class="java">Vertex ID</code> contains only one character. Prompt a new dialog box if the input is not valid. And the center of each new vertex is created exactly in the position where users make a click.</p>
+<p>You can learn about Swing event handling from the <a href="https://www.tutorialspoint.com/swing/swing_event_handling.htm" rel="noopener noreferrer nofollow" target="_blank">article</a> by TutorialsPoint.</p>
+<p> </p>
+<p></p><div class="alert alert-warning">For testing reasons, please, do not interact with your computer while tests are running. Also, if you're using macOS, make sure you grant Intellij access to your computer. To do so, follow these steps: go to <em>System Preferences </em>-&gt;<em> Security &amp; Privacy </em>-&gt;<em> Accessibility </em>-&gt;<em> Intellij IDEA CE.app</em> and allow your IDE to control your computer.</div>
+<p> </p>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, your <code class="java">JFrame</code> should contain:</p>
+<ol>
+<li>A graph with the <code class="java">JPanel</code> that represents the graph;</li>
+<li>Vertices. Each vertex is represented by a <code class="java">JPanel</code> that is created with a mouse click;</li>
+<li>A<strong> </strong>dialog box (<code class="java">JOptionPane</code>) that is created on the graph with a mouse click;</li>
+<li>Name the components as follows:</li>
+</ol>
+<ul>
+<li>Graph <code class="java">JPanel</code> — <code class="java">Graph</code>;
+
+	<ul>
+<li>Vertex <code class="java">JPanel</code> — <code class="java">Vertex &lt;id&gt;</code>, for example, <code class="java">Vertex 1</code>, <code class="java">Vertex 2</code>, <code class="java">Vertex A</code>, and so on;
+
+		<ul>
+<li>Vertex Label <code class="java">JLabel</code> <code class="java">VertexLabel &lt;id&gt;</code>, for example, <code class="java">VertexLabel 1</code>, <code class="java">VertexLabel 2</code>, <code class="java">VertexLabel A</code>, and so on.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Please, maintain the hierarchy above.</p>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong> <em>vertices may look like this</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Vertices" height="367" name="img.png" src="https://ucarecdn.com/48ab53be-8db8-43eb-aa1d-a310619d6fbb/" width="600"/></picture></p>
+<p><strong>Example 2:</strong> <em>a click on the graph pops up the dialog box</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="A click on the graph pops up the dialog box" height="385" name="img_1.png" src="https://ucarecdn.com/0d8db6ab-2df3-4da3-aff0-ff828f51cf33/" width="602"/></picture></p>
+<p><strong>Example 3:</strong> <em>Vertex 1 was created successfully</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Vertex 1 was created successfully" height="381" name="img_2.png" src="https://ucarecdn.com/44ad27a1-44f7-4dcb-ad38-65945b045fd8/" width="602"/></picture></p>
+</div>

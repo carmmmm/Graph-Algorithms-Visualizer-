@@ -1,0 +1,14 @@
+type: edu
+files:
+  - name: src/visualizer/ApplicationRunner.java
+    visible: true
+    learner_created: false
+  - name: src/visualizer/MainFrame.java
+    visible: true
+    learner_created: false
+  - name: test/ConnectingTheDotsTests.java
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/projects/207/stages/1034/implement#comment
+status: Unchecked
+record: -1
