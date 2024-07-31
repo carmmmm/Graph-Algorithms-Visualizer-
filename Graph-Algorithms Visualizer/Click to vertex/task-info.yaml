@@ -15,6 +15,15 @@ files:
   - name: src/visualizer/GraphPanel.java
     visible: true
     learner_created: true
+  - name: src/visualizer/Edge.java
+    visible: true
+    learner_created: true
+  - name: src/visualizer/GraphVisualizer.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/projects/207/stages/1033/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Wed, 31 Jul 2024 21:43:03 UTC"
+record: 2

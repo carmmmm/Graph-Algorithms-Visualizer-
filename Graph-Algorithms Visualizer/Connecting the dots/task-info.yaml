@@ -9,6 +9,18 @@ files:
   - name: test/ConnectingTheDotsTests.java
     visible: false
     learner_created: false
+  - name: src/visualizer/VertexPanel.java
+    visible: true
+    learner_created: true
+  - name: src/visualizer/GraphVisualizer.java
+    visible: true
+    learner_created: true
+  - name: src/visualizer/Edge.java
+    visible: true
+    learner_created: true
+  - name: src/visualizer/GraphPanel.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/projects/207/stages/1034/implement#comment
 status: Unchecked
 record: -1

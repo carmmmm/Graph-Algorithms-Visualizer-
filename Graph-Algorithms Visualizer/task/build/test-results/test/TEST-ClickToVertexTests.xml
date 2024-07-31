@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DrawingCirclesTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-31T20:22:14" hostname="Carmens-MBP-2.lan" time="2.447">
+<testsuite name="ClickToVertexTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-31T21:42:51" hostname="Carmens-MBP-2.lan" time="11.379">
   <properties/>
-  <testcase name="start" classname="DrawingCirclesTests" time="2.447"/>
+  <testcase name="start" classname="ClickToVertexTests" time="11.379"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 ?[1;31m
@@ -34,20 +34,6 @@ Start test 14?[0m
 Start test 15?[0m
 ?[1;31m
 Start test 16?[0m
-?[1;31m
-Start test 17?[0m
-?[1;31m
-Start test 18?[0m
-?[1;31m
-Start test 19?[0m
-?[1;31m
-Start test 20?[0m
-?[1;31m
-Start test 21?[0m
-?[1;31m
-Start test 22?[0m
-?[1;31m
-Start test 23?[0m
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

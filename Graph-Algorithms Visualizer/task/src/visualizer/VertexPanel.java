@@ -5,10 +5,11 @@ import java.awt.*;
 
 public class VertexPanel extends JPanel {
     private JLabel idLabel;
+    private String vertexId;
 
     public VertexPanel(String vertexID) {
         setLayout(new BorderLayout());
-
+        this.vertexId = vertexID;
         // Create the JLabel that shows the Vertex ID
         idLabel = new JLabel(vertexID, SwingConstants.CENTER);
         idLabel.setName("VertexLabel " + vertexID); // Set the name for the JLabel
@@ -36,4 +37,7 @@ public class VertexPanel extends JPanel {
         return false;
     }
 
+    public String getVertexId() {
+        return vertexId;
+    }
 }
