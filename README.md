@@ -9,9 +9,9 @@ The Graph-Algorithms Visualizer is a Java Swing application designed to demonstr
 * Interactive Graph Creation: Add vertices and edges by clicking on the canvas.
 * Dynamic Edge Weights: Specify and view weights on edges.
 ### Algorithm Demonstration
-*Shortest Path (Dijkstra's Algorithm): Visualize the shortest path between vertices.
-*Graph Traversal (DFS and BFS): Explore the graph using depth-first and breadth-first search.
-*Minimum Spanning Tree (Prim's Algorithm): Find and display the minimum spanning tree of the graph.
+* Shortest Path (Dijkstra's Algorithm): Visualize the shortest path between vertices.
+* Graph Traversal (DFS and BFS): Explore the graph using depth-first and breadth-first search.
+* Minimum Spanning Tree (Prim's Algorithm): Find and display the minimum spanning tree of the graph.
 ## Technologies Used
 * Java Swing: For the graphical user interface.
 * Java AWT: For handling graphics and events.
