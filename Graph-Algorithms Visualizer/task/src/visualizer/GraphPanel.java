@@ -5,36 +5,76 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class GraphPanel extends JPanel {
-    private final int vertexSize = 50;
     private String mode = "Add a Vertex";
-    private List<VertexPanel> vertices = new ArrayList<>();
-    private Map<String, VertexPanel> vertexMap = new HashMap<>();
-    private List<Edge> edges = new ArrayList<>();
+    private VertexPanel selectedVertex;
+    private final List<EdgeComponent> edges = new ArrayList<>();
+    private int vertexCount = 0;
 
     public GraphPanel() {
-        setLayout(null); // Using null layout for absolute positioning
-        setBackground(Color.BLACK); // Set background color of the graph panel to black
+        setLayout(null);
+        setBackground(Color.BLACK);
 
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (mode.equals("Add a Vertex")) {
-                    String vertexID = showInputDialog();
-                    if (vertexID != null && isValidVertexID(vertexID)) {
-                        addVertex(vertexID, e.getX(), e.getY());
-                    } else if (vertexID != null) {
-                        JOptionPane.showMessageDialog(GraphPanel.this,
-                                "Invalid Vertex ID. Please enter a non-empty single character.",
+                    String vertexId = JOptionPane.showInputDialog(
+                            GraphPanel.this,
+                            "Enter Vertex ID:",
+                            "Add Vertex",
+                            JOptionPane.PLAIN_MESSAGE
+                    );
+                    if (vertexId != null && vertexId.length() == 1) {
+                        addVertex(e.getX(), e.getY(), vertexId);
+                    } else {
+                        JOptionPane.showMessageDialog(
+                                GraphPanel.this,
+                                "Invalid Vertex ID. Please enter a single character.",
                                 "Error",
-                                JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.ERROR_MESSAGE
+                        );
                     }
                 } else if (mode.equals("Add an Edge")) {
-                    addEdge(e.getX(), e.getY());
+                    Component comp = getComponentAt(e.getPoint());
+                    if (comp instanceof VertexPanel) {
+                        VertexPanel vertex = (VertexPanel) comp;
+                        if (selectedVertex == null) {
+                            selectedVertex = vertex;
+                        } else {
+                            String weightStr = JOptionPane.showInputDialog(
+                                    GraphPanel.this,
+                                    "Enter Edge Weight:",
+                                    "Add Edge",
+                                    JOptionPane.PLAIN_MESSAGE
+                            );
+                            if (weightStr != null && weightStr.matches("\\d+")) {
+                                int weight = Integer.parseInt(weightStr);
+                                addEdge(selectedVertex, vertex, weight);
+                                selectedVertex = null;
+                            } else {
+                                JOptionPane.showMessageDialog(
+                                        GraphPanel.this,
+                                        "Invalid weight. Please enter a digit.",
+                                        "Error",
+                                        JOptionPane.ERROR_MESSAGE
+                                );
+                            }
+                        }
+                    }
+                } else if (mode.equals("Remove a Vertex")) {
+                    Component comp = getComponentAt(e.getPoint());
+                    if (comp instanceof VertexPanel) {
+                        removeVertex((VertexPanel) comp);
+                    }
+                } else if (mode.equals("Remove an Edge")) {
+                    // Detect the edge under the mouse click and remove it
+                    Component comp = getComponentAt(e.getPoint());
+                    if (comp instanceof EdgeComponent) {
+                        removeEdge((EdgeComponent) comp);
+                    }
                 }
             }
         });
@@ -42,86 +82,47 @@ public class GraphPanel extends JPanel {
 
     public void setMode(String mode) {
         this.mode = mode;
+        selectedVertex = null; // Reset the selected vertex when mode changes
     }
 
-    private String showInputDialog() {
-        while (true) {
-            String input = JOptionPane.showInputDialog(this,
-                    "Enter Vertex ID:",
-                    "Vertex",
-                    JOptionPane.PLAIN_MESSAGE);
-
-            if (input == null) {
-                return null; // Exit if the user canceled the dialog
-            }
-
-            if (isValidVertexID(input)) {
-                return input;
-            }
-        }
-    }
-
-    private boolean isValidVertexID(String id) {
-        return id != null && !id.trim().isEmpty() && id.length() == 1 && !id.isBlank();
-    }
-
-    private void addVertex(String vertexID, int x, int y) {
-        VertexPanel vertex = new VertexPanel(vertexID);
-        vertex.setName("Vertex " + vertexID);
-        vertex.setBounds(x - vertexSize / 2, y - vertexSize / 2, vertexSize, vertexSize);
+    private void addVertex(int x, int y, String vertexId) {
+        VertexPanel vertex = new VertexPanel(vertexId);
+        vertex.setBounds(x - 25, y - 25, 50, 50);
         add(vertex);
-        vertices.add(vertex);
-        vertexMap.put(vertexID, vertex);
-        revalidate();
         repaint();
     }
 
-    private void addEdge(int x, int y) {
-        VertexPanel vertex1 = getNearestVertex(x, y);
-        if (vertex1 == null) return;
-
-        VertexPanel vertex2 = getSecondVertex(vertex1, x, y);
-        if (vertex2 == null) return;
-
-        String weightStr = JOptionPane.showInputDialog(this, "Enter edge weight:");
-        if (weightStr == null || weightStr.isEmpty() || !weightStr.matches("\\d+")) {
-            JOptionPane.showMessageDialog(this, "Invalid weight. Please enter a numeric value.");
-            return;
-        }
-
-        int weight = Integer.parseInt(weightStr);
-
-        Edge edge = new Edge(vertex1, vertex2, weight);
-        edges.add(edge);
+    private void addEdge(VertexPanel source, VertexPanel destination, int weight) {
+        EdgeComponent edge = new EdgeComponent(source, destination, weight);
+        edges.add(edge); // Keep track of edges
         add(edge);
-        revalidate();
+        edge.setBounds(0, 0, getWidth(), getHeight());
         repaint();
     }
 
-    private VertexPanel getNearestVertex(int x, int y) {
-        for (VertexPanel vertex : vertices) {
-            if (vertex.getBounds().contains(x, y)) {
-                return vertex;
+    private void removeVertex(VertexPanel vertex) {
+        // Remove edges connected to this vertex
+        edges.removeIf(edge -> {
+            if (edge.getSource() == vertex || edge.getDestination() == vertex) {
+                remove(edge);
+                return true;
             }
-        }
-        return null;
+            return false;
+        });
+        // Remove the vertex itself
+        remove(vertex);
+        repaint();
     }
 
-    private VertexPanel getSecondVertex(VertexPanel firstVertex, int x, int y) {
-        VertexPanel vertex2 = getNearestVertex(x, y);
-        if (vertex2 == null || vertex2.equals(firstVertex)) {
-            JOptionPane.showMessageDialog(this, "Invalid vertex. Please select a different vertex.");
-            return null;
-        }
-        return vertex2;
+    private void removeEdge(EdgeComponent edge) {
+        edges.remove(edge);
+        remove(edge);
+        repaint();
     }
 
-    public void clearGraph() {
-        removeAll();
-        vertices.clear();
-        vertexMap.clear();
-        edges.clear();
-        revalidate();
+    public void resetGraph() {
+        removeAll(); // Remove all components from the panel
+        edges.clear(); // Clear the list of edges
         repaint();
     }
 }

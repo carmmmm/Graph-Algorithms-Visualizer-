@@ -21,7 +21,7 @@ files:
   - name: src/visualizer/GraphVisualizer.java
     visible: true
     learner_created: true
-feedback_link: https://hyperskill.org/projects/207/stages/1033/implement#comment
+feedback_link: https://hyperskill.org/learn/step/15625#comment
 status: Solved
 feedback:
   message: Congratulations!

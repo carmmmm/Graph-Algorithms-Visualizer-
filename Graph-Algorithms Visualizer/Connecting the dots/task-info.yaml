@@ -21,6 +21,15 @@ files:
   - name: src/visualizer/GraphPanel.java
     visible: true
     learner_created: true
-feedback_link: https://hyperskill.org/projects/207/stages/1034/implement#comment
-status: Unchecked
+  - name: src/visualizer/EdgeComponent.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/15626#comment
+status: Failed
+feedback:
+  message: |-
+    Error in test #1
+
+    Cannot find a component of class JLabel with name Mode
+  time: "Thu, 01 Aug 2024 17:24:23 UTC"
 record: -1

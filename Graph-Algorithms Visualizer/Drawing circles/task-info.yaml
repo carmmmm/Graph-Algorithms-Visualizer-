@@ -15,7 +15,7 @@ files:
   - name: src/visualizer/GraphPanel.java
     visible: true
     learner_created: true
-feedback_link: https://hyperskill.org/projects/207/stages/1032/implement#comment
+feedback_link: https://hyperskill.org/learn/step/15624#comment
 status: Solved
 feedback:
   message: Congratulations!
