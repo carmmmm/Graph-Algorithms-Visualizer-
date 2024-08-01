@@ -10,11 +10,12 @@ public class VertexPanel extends JPanel {
     public VertexPanel(String vertexID) {
         setLayout(new BorderLayout());
         this.vertexId = vertexID;
-        // Create the JLabel that shows the Vertex ID
+
+        // Create and configure the JLabel to show the Vertex ID
         idLabel = new JLabel(vertexID, SwingConstants.CENTER);
         idLabel.setName("VertexLabel " + vertexID); // Set the name for the JLabel
         idLabel.setForeground(Color.BLACK); // Set the label color to black for visibility
-        add(idLabel);
+        add(idLabel, BorderLayout.CENTER); // Add label to center of the panel
 
         // Customize the appearance of the JPanel
         setOpaque(false); // Make sure the panel itself is transparent
@@ -23,8 +24,11 @@ public class VertexPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.WHITE); // Set the vertex circle color to white for visibility
-        g.fillOval(0, 0, getWidth(), getHeight());
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.WHITE); // Set the vertex circle color to white for visibility
+        g2d.fillOval(0, 0, getWidth(), getHeight());
+        g2d.setColor(Color.BLACK); // Set the color for the vertex ID label
+        g2d.drawOval(0, 0, getWidth(), getHeight()); // Draw the outline of the circle
     }
 
     @Override

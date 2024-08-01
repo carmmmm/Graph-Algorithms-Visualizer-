@@ -1,5 +1,7 @@
 package visualizer;
 
+import visualizer.VertexPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -22,6 +24,10 @@ public class EdgeComponent extends JComponent {
         return destination;
     }
 
+    public int getWeight() {
+        return weight;
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -35,4 +41,5 @@ public class EdgeComponent extends JComponent {
         int midY = (srcCenter.y + destCenter.y) / 2;
         g.drawString(String.valueOf(weight), midX, midY);
     }
+
 }

@@ -16,7 +16,7 @@ public class Edge extends JComponent {
         updateBounds();
     }
 
-    private void updateBounds() {
+    public void updateBounds() {
         int x1 = vertex1.getX() + vertex1.getWidth() / 2;
         int y1 = vertex1.getY() + vertex1.getHeight() / 2;
         int x2 = vertex2.getX() + vertex2.getWidth() / 2;
