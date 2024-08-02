@@ -29,7 +29,7 @@ public class Edge extends JComponent {
         super.paintComponent(g);
 
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(Color.BLACK);
+        g2d.setColor(Color.WHITE);
 
         int x1 = vertex1.getX() + vertex1.getWidth() / 2 - getX();
         int y1 = vertex1.getY() + vertex1.getHeight() / 2 - getY();
